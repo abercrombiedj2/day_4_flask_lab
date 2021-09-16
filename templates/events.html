@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="form">
+    <form action="/events" method="post">
+        <p><label for="name">Event Name:</label></p>
+        <input type="text" name="name" id="name">
+        <p><label for="date">Date:</label></p>
+        <input type="date" name="date" id="date">
+        <p><label for="guests">Number of Guests:</label></p>
+        <input type="number" name="guests" id="guests">
+        <p><label for="location">Location:</label></p>
+        <input type="text" name="location" id="location">
+        <p><label for="description">Description:</label></p>
+        <textarea name="description" rows="3" cols="30"></textarea>
+        <p><label for="weekly">Weekly?</label></p>
+        <input type="checkbox" name="weekly" id="weekly" value="True">
+        <p><input type="submit" value="Add Event"></p>
+    </form>
+</div>
+<div id="list">
+<h1>Events List</h1>
+{% for event in events %}
+    <p>{{ event.name }}, {{ event.date }}, {{ event.guests }}, {{ event.location }}, {{ event.description }}
+        {% if event.weekly %}<span>&#9989;</span> 
+        {% endif %}
+    </p>
+    <form action='/events/delete/{{events.index(event)}}' method='post'>
+        <input type='submit' value='Delete'>
+    </form>
+{%  endfor %}
+</div>
+
+{% endblock %}

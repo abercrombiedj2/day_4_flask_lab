@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+}
+
+header {
+    padding: 4vw;
+    background-color: black;
+    text-align: right;
+    grid-area: header;
+}
+
+header > nav > ul {
+    margin: 0;
+    padding: 0;
+}
+
+header > nav > ul > li {
+    list-style: none;
+}
+
+header > nav > ul > li > a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: "Major Mono Display", monospace;
+    font-size: 100px;
+}
+
+header > nav > ul > li > a:hover {
+    color: goldenrod;
+}
+
+#form {
+    grid-area: form;
+    padding: 20px;
+    font-family: "Luckiest Guy", cursive;
+    font-size: 1.5vw;
+    line-height: 10px;
+    height: 100%;
+}
+
+#list {
+    background-color: black;
+    grid-area: list;
+    padding: 30px;
+    font-family: "Permanent Marker", cursive;
+    font-size: 3vw;
+    color: goldenrod;
+    border: 20px solid goldenrod;
+    height: 100%;
+}
+
+#list h1 {
+    margin: 0;
+    font-size: 6vw;
+    text-decoration: underline;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-areas: "header header" "form list";
+    grid-template-columns: 3fr 7fr;
+}
